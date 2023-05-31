@@ -1,0 +1,14 @@
+{
+  "name": "test_json_server",
+  "version": "1.0.0",
+  "description": "測試json-server",
+  "main": "jsserver.js",
+  "scripts": {
+    "mock-server": "json-server --c json-server.json db.json"
+  },
+  "author": "ttom",
+  "license": "MIT",
+  "devDependencies": {
+    "json-server": "^0.15.0"
+  }
+}

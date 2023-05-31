@@ -1,0 +1,33 @@
+<mat-nav-list style="margin-top: 64px;" color="primary">
+  <!-- <h3 matSubheader>示範用頁面</h3> -->
+  <!-- <mat-list-item [routerLink]="['/','dashboard','ch06']" (click)="handleClicked($event)">
+    <mat-icon md-list-icon>email</mat-icon>第06章比例尺使用
+    <mat-icon matSuffix class="SufficIcon">keyboard_arrow_right</mat-icon>
+  </mat-list-item> -->
+  <mat-list-item [routerLink]="['/','dashboard','ch15']" (click)="handleClicked($event)">
+    <mat-icon md-list-icon><span class="iconify" data-icon="fa-home"></span></mat-icon>第15章台灣TopoJSON
+    <mat-icon matSuffix class="SufficIcon">keyboard_arrow_right</mat-icon>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item [routerLink]="['/','dashboard','ch15']" (click)="handleClicked($event)">
+    <mat-icon md-list-icon>
+      <span class="iconify" data-icon="mdi-home"></span>
+    </mat-icon>
+    <mat-icon md-list-icon>
+      <span class="iconify icon-bell" data-icon="vaadin-bell"></span>
+    </mat-icon>
+    測試ICON
+    <mat-icon matSuffix class="SufficIcon">keyboard_arrow_right</mat-icon>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <!-- 另外一組選單 -->
+  <!-- <h3 matSubheader>其他頁面</h3> -->
+  <!-- <a [routerLink]="['/']" mat-list-item>首頁</a>
+        <a [routerLink]="['/']" mat-list-item>Google</a>
+        <a [routerLink]="['/']" mat-list-item>Facebook</a> -->
+  <mat-nav-list>
+    <app-menu-list-item *ngFor="let item of navItems" [item]="item"></app-menu-list-item>
+  </mat-nav-list>
+
+</mat-nav-list>
+<hr>

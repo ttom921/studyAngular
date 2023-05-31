@@ -1,0 +1,53 @@
+<h3>
+  歡𨒖來到{{title}}
+</h3>
+
+<h3>1+1={{1+1}}</h3>
+
+<h3>可以調用方法{{getVal()}}</h3>
+<hr />
+<p>局部變量</p>
+<input #heroInput>
+<p>{{heroInput.value}}</p>
+<button (click)="sayHello(heroInput.value)">局部變量</button>
+<hr />
+<p>屬性綁定</p>
+<img [src]="imgSrc" />
+<hr />
+<p>事件綁定</p>
+<button (click)="btnClick($event)">測試事件</button>
+<hr />
+<p>雙定綁定</p>
+<div [style.font-size.px]="fontSizePx">Resizable Text</div>
+<hr />
+<p>結構型指令</p>
+<p>*ngIf</p>
+<p *ngIf="isShow" style="background-color:#ff3300;">是顯示還是不顯示？</p>
+<button (click)="toggleShow()">控級顯示隱藏</button>
+<p>*ngFor</p>
+<li *ngFor="let race of races;let i=index;">
+  {{i+1}}-{{race.name}}
+</li>
+<p>*ngSwitch</p>
+<div [ngSwitch]="mapStatus">
+  <p *ngSwitchCase="0">下載中…</p>
+  <p *ngSwitchCase="1">正在讀取…</p>
+  <p *ngSwitchDefault>系統繁忙…</p>
+</div>
+<hr />
+<p>屬性型指令</p>
+<p>NgClass</p>
+<div [ngClass]="currentClasses">同時批量設置多個樣式</div>
+<button (click)="setCurrentClasses()">設置</button>
+<p>NgStyle</p>
+<div [ngStyle]="currentStyles">
+  用NgStyle批量修改內聯樣式！
+</div>
+<button (click)="setCurrentStyles()">設置NgStyle</button>
+<p>NgModel</p>
+<p>ngModel 只能用在表單類的元素上面</p>
+<input [(ngModel)]="currentRace.name">
+<p>{{currentRace.name}}</p>
+<hr />
+<p>管道</p>
+{{currentTime | date:'yyyy-MM-dd HH:mm:ss'}}

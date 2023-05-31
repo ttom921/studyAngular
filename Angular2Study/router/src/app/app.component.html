@@ -1,0 +1,12 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<a [routerLink]="['/home']" >主頁</a>
+<!-- 參數式 
+<a [routerLink]="['/product']" [queryParams]="{id:1}" >商品詳情</a>
+-->
+<!-- url式 -->
+<a [routerLink]="['/product',1]"  >商品詳情</a>
+<input type="button" value="商品詳情" (click)="toProductDetails()" />
+<a [routerLink]="[{outlets:{aux:'chat'}}]" >開始聊天</a>
+<a [routerLink]="[{outlets:{aux:null}}]" >結束聊天</a>
+<router-outlet></router-outlet>
+<router-outlet name="aux"></router-outlet>

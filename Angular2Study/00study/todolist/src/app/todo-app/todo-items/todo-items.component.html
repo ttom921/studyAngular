@@ -1,0 +1,18 @@
+<div>
+  <strong>TodoItemsComponent中測試strong標籤</strong>
+</div>
+<div>
+  <span class="blue" > TodoItemsComponet中測試blue class 籤</span>
+</div>
+<ul>
+  <li *ngFor="let item of getTodoList();let recordIndex=index;let firstRecord=first;let lastRecord=last;let evenRecord=even;let oddRecord=odd;">
+    <label htmlFor="chk_{{item.id}}">
+      <input id="chk_{{item.id}}" type="checkbox" [checked]="item.done" (click)="ckclick(item)" >
+      <span  [ngClass]="{'done':item.done,'text-danger':firstRecord,'text-warning':lastRecord,'bg-info':evenRecord,'bg-success':oddRecord}" >{{ item.value }}</span> 
+    </label>
+    |
+    <a href="#" (click)="deltodoitem(item)" >刪除</a>
+    
+    <span> {{item | todoDone:true }}</span>
+    </li>
+</ul>

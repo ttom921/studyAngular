@@ -1,0 +1,22 @@
+<form [formGroup]="formModel" (ngSubmit)="onSearch()" novalidate>
+  <div class="form-group" [class.has-error]="formModel.hasError('minlength','title')">
+    <label for="productTitle">商品名稱</label>
+    <input formControlName='title' type="text" id="productTitle" placeholder="商品名稱" class="form-control">
+    <span class="help-block" [class.hidden]="!formModel.hasError('minlength','title')">請至少輸入3個字</span>
+  </div>
+  <div class="form-group" [class.has-error]="formModel.hasError('positiveNumber','price')">
+    <label for="productPrice">商品價格</label>
+    <input formControlName='price' type="text" id="productPrice" placeholder="商品價格" class="form-control">
+    <span class="help-block" [class.hidden]="!formModel.hasError('positiveNumber','price')">正數</span>
+  </div>
+  <div class="form-group">
+    <label for="productCategory">商品類別</label>
+    <select formControlName="category" id="productCategory" class="form-control">
+      <option value="-1">全部分類</option>
+      <option *ngFor="let category of categories" [value]="category"  >{{category}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary btn-block">搜索</button>
+  </div>
+</form>

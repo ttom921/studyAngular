@@ -1,0 +1,18 @@
+<!-- <div>
+  我是父組件
+</div>
+<input type="text" placeholder="請輸入股票代碼" [(ngModel)]="stock" >
+<app-order [stockCode]="stock" [amount]="100" ></app-order> -->
+
+
+
+<!-- <app-price-quote (lastPrice)="priceQuoteHandler($event)" ></app-price-quote>
+<div>
+  這是在報價組件外部
+</div>
+<div>
+  股票代碼是{{priceQuote.stockCode}}
+  股票價格是{{priceQuote.lastPrice | number:'2.2-2'}}
+</div> -->
+<app-price-quote (buy)="buyHandler($event)" ></app-price-quote>
+<app-order [priceQuote]="priceQuote"></app-order>

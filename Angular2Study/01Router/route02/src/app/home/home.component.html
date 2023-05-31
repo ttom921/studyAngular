@@ -1,0 +1,21 @@
+<div fxFill fxLayout="column" class="layout">
+  <div class="header" fxLayout="row">
+    <button mat-icon-button (click)="sidenav.open()" fxHide fxShow.xs>
+      <mat-icon> menu</mat-icon>
+    </button>
+    <app-header fxFlex></app-header>
+  </div>
+  <div fxFlex fxLayout="row" class="main">
+    <div fxFlex="200px" class="aside" fxHide.xs>
+      <app-aside></app-aside>
+    </div>
+    <mat-sidenav-container fxFlex>
+      <mat-sidenav #sidenav mode="over" class="aside" fxHide fxShow.xs>
+        <app-aside fxFlex="200px"></app-aside>
+      </mat-sidenav>
+      <div fxFlex class="content">Content
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-container>
+  </div>
+</div>

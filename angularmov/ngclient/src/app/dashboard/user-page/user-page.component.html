@@ -1,0 +1,46 @@
+使用者相關
+<hr>
+<mat-form-field>
+  <mat-label>選擇資料庫</mat-label>
+  <mat-select [(ngModel)]="dbinfoservice.Seldbkey" name="dbkey" (ngModelChange)="onDBSelection()">
+    <mat-option *ngFor="let db of dblist" [value]="db.dbkey">
+      {{db.dbkey}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<hr>
+加入使用者
+<button [disabled]="!dbinfoservice.Seldbkey" mat-raised-button (click)="showAddUserDialog()" color="primary">加入</button>
+
+<hr>
+使用者列表
+<mat-paginator #paginator [length]="totalCount" [pageIndex]="0" [pageSize]="pageSize"
+  [pageSizeOptions]="pageSizeOptions">
+
+</mat-paginator>
+<mat-table #table [dataSource]="dataSource">
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>姓名</mat-header-cell>
+    <mat-cell *matCellDef="let row;">
+      <mat-form-field floatLabel="never">
+        <input matInput placeholder="Name" [value]="row.name" [(ngModel)]="row.name">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="username">
+    <mat-header-cell *matHeaderCellDef>暱稱</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{row.username}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="management">
+    <mat-header-cell *matHeaderCellDef>
+      <u>管理</u>
+    </mat-header-cell>
+    <mat-cell *matCellDef="let row;">
+      <button *ngIf="row.dbkey!=''" mat-button color="primary" (click)="showModifyUserDialog(row)">修改 </button>
+      <button *ngIf="row.dbkey!=''" mat-button color="warn" (click)="showDeleteUserDialog(row)">刪除</button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="['name','username','management']"></mat-header-row>
+  <mat-row *matRowDef="let eachrows;columns:['name','username','management']"></mat-row>
+</mat-table>

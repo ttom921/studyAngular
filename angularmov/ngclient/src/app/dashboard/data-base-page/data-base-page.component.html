@@ -1,0 +1,26 @@
+資料庫
+<button mat-raised-button (click)="shwoAddDataBaseDialog()" color="primary">新增資料庫</button>
+<hr>
+資料庫列表
+<mat-table #table [dataSource]="dataSource">
+  <ng-container matColumnDef="dbkey">
+    <mat-header-cell *matHeaderCellDef>資料庫主鍵</mat-header-cell>
+    <mat-cell *matCellDef="let row;">{{row.dbkey}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="dburl">
+    <mat-header-cell *matHeaderCellDef>資料庫連結</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{row.dburl}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="management">
+    <mat-header-cell *matHeaderCellDef>
+      <u>管理</u>
+    </mat-header-cell>
+    <mat-cell *matCellDef="let row;">
+      <!-- <button mat-button color="primary">回覆 </button> -->
+      <button *ngIf="row.dbkey!=''" mat-button color="warn" (click)="showDeleteDialog(row)">移除</button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="['dbkey','dburl','management']"></mat-header-row>
+  <mat-row *matRowDef="let eachrows;columns:['dbkey','dburl','management']"></mat-row>
+</mat-table>

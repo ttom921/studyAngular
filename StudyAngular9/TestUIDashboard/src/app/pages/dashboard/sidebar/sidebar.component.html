@@ -1,0 +1,32 @@
+<mat-nav-list style="margin-top: 64px;" color="primary">
+  <mat-list-item [routerLink]="['/','dashboard','ngtestmap']" (click)="handleClicked($event)">
+    <mat-icon md-list-icon>dns</mat-icon>測試map
+    <mat-icon matSuffix class="SufficIcon">keyboard_arrow_right</mat-icon>
+  </mat-list-item>
+
+  <mat-list-item [routerLink]="['/','videoplaymanager2','わ2-674','eventid123','tokendata']" (click)="handleClicked($event)">
+    <mat-icon md-list-icon>dns</mat-icon>測試影像播放2
+    <mat-icon matSuffix class="SufficIcon">keyboard_arrow_right</mat-icon>
+  </mat-list-item>
+
+  <mat-list-item [routerLink]="['/','videoplaymanager','わ2-674','eventid123','tokendata']" (click)="handleClicked($event)">
+    <mat-icon md-list-icon>dns</mat-icon>測試影像播放
+    <mat-icon matSuffix class="SufficIcon">keyboard_arrow_right</mat-icon>
+  </mat-list-item>
+
+  <mat-list-item [routerLink]="['/','dashboard','ngtestsinglevideos']" (click)="handleClicked($event)">
+    <mat-icon md-list-icon>dns</mat-icon>測試單一影像
+    <mat-icon matSuffix class="SufficIcon">keyboard_arrow_right</mat-icon>
+  </mat-list-item>
+
+
+  <mat-list-item [routerLink]="['/','dashboard','ngtestdatetimepicker']" (click)="handleClicked($event)">
+    <mat-icon md-list-icon>dns</mat-icon>測試日歷元件
+    <mat-icon matSuffix class="SufficIcon">keyboard_arrow_right</mat-icon>
+  </mat-list-item>
+
+  <mat-divider></mat-divider>
+  <mat-nav-list>
+    <app-menu-list-item *ngFor="let item of navItems" [item]="item"></app-menu-list-item>
+  </mat-nav-list>
+</mat-nav-list>

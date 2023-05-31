@@ -1,0 +1,18 @@
+<div #player>
+  <div class="controls" [ngClass]="{'disableDiv': !canactioned}">
+    <!-- <button mat-raised-button [disabled]="!canactioned">test</button> -->
+    <!-- <div class="progress">
+      <mat-seek-progress-control [color]="color" [video]="video"></mat-seek-progress-control>
+    </div> -->
+    <div class="menu">
+      <div class="left">
+        <mat-play-button #matplaybutton (playChanged)="onClickPlay($event)"></mat-play-button>
+        <mat-frame-by-frame-control *ngIf="showFrameByFrame" [fps]="fps" [oneFrame]="oneFrame" [jumpTime]="jumpTime" [video]="mainvideo"></mat-frame-by-frame-control>
+      </div>
+      <div class="right">
+        <mat-fullscreen-button *ngIf="fullscreen" [mainvideo]="mainvideo"></mat-fullscreen-button>
+      </div>
+    </div>
+
+  </div>
+</div>

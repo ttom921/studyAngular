@@ -1,0 +1,38 @@
+// Below codes should only be included ONCE in your application.
+@import '~@angular/material/theming';
+@include mat-core();
+
+// Add your desired themes to this map.
+$custom-primary: mat-palette($mat-light-blue);
+$custom-accent:  mat-palette($mat-orange, 500, A100, A700);
+$themes-map: (
+  indigo-pink: (
+    primary-base: $mat-indigo,
+    accent-base: $mat-pink,
+  ),
+
+  deeppurple-amber: (
+    primary-base: $mat-deep-purple,
+    accent-base: $mat-amber,
+  ),
+
+  pink-bluegrey: (
+    primary-base: $mat-pink,
+    accent-base: $mat-blue-gray,
+  ),
+
+  purple-green: (
+    primary-base: $mat-purple,
+    accent-base: $mat-green,
+  ),
+  hs-blue:(
+//    primary-base: $mat-purple,
+//    accent-base:$custom-green
+    primary-base: $custom-primary,
+    accent-base:$custom-accent
+  )
+);
+
+// Import the module and do the job:
+@import '_themes-core';
+@include make-stylesheets($themes-map);

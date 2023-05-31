@@ -1,0 +1,23 @@
+<div fxLayout="row" fxLayoutAlign="center stretch" style="width:100vw;height:100vh;">
+  <!-- left -->
+  <div fxFlex="10">
+    <div style="margin-left: 12px;">
+      <mat-card class="mat-elevation-z2" *ngFor="let item of videolist;let idx=index" style="padding: 2px;" [ngClass]="{'select-card': selectidx==idx}" (click)="onVideoclick($event,item,idx)">
+        <mat-video [playFreeze]="true" [mustShowMouseIcon]="true" [muted]="true" [download]="false" [preload]="false" [overlay]="false" src="{{item.src}}">
+        </mat-video>
+      </mat-card>
+    </div>
+  </div>
+  <!-- right -->
+  <div fxFlex="90" fxLayout="column">
+    <div style="width:100%;height:90%;">
+      <mat-video #mainvideoid [playFreeze]="true" [mustShowMouseIcon]="true" [muted]="true" [download]="false" [preload]="false" [overlay]="true">
+      </mat-video>
+    </div>
+    <div fxFlex="10">
+      <div>
+        <sync-mgr #syncmgr [mainvideo]="mainvideoid" [showFrameByFrame]="true" [fullscreen]="false"></sync-mgr>
+      </div>
+    </div>
+  </div>
+</div>

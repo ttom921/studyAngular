@@ -1,0 +1,20 @@
+<div #player>
+  <div class="controls">
+    <!-- <button mat-raised-button [disabled]="!canactioned">test</button> -->
+    <!-- <div class="progress">
+      <mat-seek-progress-control [color]="color" [video]="video"></mat-seek-progress-control>
+    </div> -->
+    <div class="menu">
+      <div class="left" [ngClass]="{'disableDiv': !canactioned}">
+        <mat-play-button #matplaybutton></mat-play-button>
+        <mat-frame-by-frame-control *ngIf="showFrameByFrame" [fps]="fps" [oneFrame]="oneFrame"></mat-frame-by-frame-control>
+        <mat-time-control hidden="showTime" #mattimecontrol></mat-time-control>
+        <mat-photo-button *ngIf="photoscreen" [allphoto]="false"></mat-photo-button>
+      </div>
+      <div class="right">
+        <mat-layout-button></mat-layout-button>
+      </div>
+    </div>
+
+  </div>
+</div>

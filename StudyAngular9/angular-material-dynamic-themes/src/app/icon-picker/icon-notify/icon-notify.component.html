@@ -1,0 +1,21 @@
+<mat-toolbar mat-dialog-title color="accent">
+  <mat-toolbar-row>
+    Icon Caveats
+    <span class="spacer"></span>
+    <button mat-icon-button mat-dialog-close>
+      <mat-icon data-close>close</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div mat-dialog-content>
+  <p>
+    Previously the theme builder used SVG sets to produce the various icon treatments afforded by
+    the material design language.
+    This has all been moved over to using the icon fonts. This means any previous use of
+  </p>
+  <pre>&lt;mat svgIcon="name"&gt;name&lt;/mat&gt;</pre>
+  <p>
+    Should be replaced with:
+  </p>
+  <pre>&lt;mat&gt;name&lt;/mat&gt;</pre>
+</div>

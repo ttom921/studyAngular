@@ -1,0 +1,38 @@
+div.message {
+  font-weight: bold;
+  font-size: 24pt;
+  // padding-left: 25px;
+  // padding-right: 25px;
+  // padding-bottom: 0px;
+}
+
+mat-dialog-content.div.p {
+  height: 2rem;
+}
+
+// div.info {
+//   //   padding-left: 25px;
+//   //   padding-right: 25px;
+//   //padding-top: 2px;
+//   //padding-bottom: 2px;
+//   //   font-size: 12pt;
+// }
+
+// .mat-dialog-container {
+//   height: 60vh;
+//   overflow-y: hidden;
+
+// }
+
+.mat-dialog-content {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //background-color: red;
+}
+
+.mat-dialog-actions {
+  justify-content: flex-end;
+}

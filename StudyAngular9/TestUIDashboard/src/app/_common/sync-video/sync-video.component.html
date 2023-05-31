@@ -1,0 +1,37 @@
+<div #player class="videoplayer">
+  <!-- <button (click)="onTestRandTime()">測試隨機加入時間mat-icon </button>
+  <button (click)="onTestCurrentTime()">+5 0 </button>
+  <button (click)="onTest2CurrentTime()">+5 2 </button> -->
+
+  <!-- <div class="controls"   *ngIf="(syncVideoMgrService.loadstart$ | async)"> -->
+  <div class="controls" [ngClass]="{'disableDiv': !canactioned}">
+    <button mat-raised-button [disabled]="!canactioned" (click)="onTestclick()">test</button>
+    <!-- <div class="progress">
+      <mat-seek-progress-control [color]="color" [video]="video"></mat-seek-progress-control>
+    </div> -->
+
+    <div class="menu">
+      <div class="left">
+
+        <mat-play-button #matplaybutton (playChanged)="onClickPlay($event)"></mat-play-button>
+        <mat-frame-by-frame-control *ngIf="showFrameByFrame" [fps]="fps" [oneFrame]="oneFrame"></mat-frame-by-frame-control>
+        <!-- <mat-frame-by-frame-control *ngIf="showFrameByFrame" [video]="video" [fps]="fps"></mat-frame-by-frame-control> -->
+
+        <!-- <mat-volume-control [muted]="muted" (mutedChanged)="muted = $event; mutedChange.emit(muted);" [color]="color" [video]="video" [keyboard]="keyboard">
+        </mat-volume-control> -->
+
+        <!-- <mat-time-control [video]="video"></mat-time-control> -->
+      </div>
+
+      <div class="right">
+        <!-- <mat-quality-control *ngIf="quality" [video]="video"></mat-quality-control> -->
+
+        <!-- <mat-download-button *ngIf="download" [title]="title" [video]="video"></mat-download-button> -->
+        <mat-photo-button *ngIf="photoscreen"></mat-photo-button>
+        <mat-fullscreen-button *ngIf="fullscreen"></mat-fullscreen-button>
+      </div>
+    </div>
+  </div>
+
+  <!-- <mat-video-spinner [spinner]="spinner" [video]="video"></mat-video-spinner> -->
+</div>
